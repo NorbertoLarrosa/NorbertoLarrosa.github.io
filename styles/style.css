@@ -1,5 +1,5 @@
 body {
-    background-image: url("museo.jpg");
+    background-image: url("/imagenes/museo.jpg");
     background-size: cover;
     display: block;
 }
