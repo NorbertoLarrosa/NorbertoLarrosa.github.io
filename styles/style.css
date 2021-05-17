@@ -55,6 +55,6 @@ ul.menu li a:hover,
 ul.menu li a:active {
     font-size: 24px;
     font-family: 'Courier New', Courier, monospace;
-    background: #f0a6a6 url("/logo2.png") no-repeat 3px;
+    background: #f0a6a6 url("/imagenes/logo2.png") no-repeat 3px;
     background-size: 30px 30px;
 }
