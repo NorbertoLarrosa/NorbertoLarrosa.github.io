@@ -62,12 +62,16 @@
 					switch(markerId)
 					{
 						case '3000':
-							infoV.innerHTML = 'KULTRUN'; break;
+							infoV.innerHTML = 'KULTRUN';
+							myAdd.setAttribute("href","https://norbertolarrosa.github.io/kultrun.html");
+							break;
 						case '3100':
 							infoV.innerHTML = 'VASIJA'; break;
+							myAdd.setAttribute("href","https://norbertolarrosa.github.io/kultrun.html");
+							break;
 					}
 					
-					myAdd.setAttribute("href","https://localhost:".concat(markerId));
+					//myAdd.setAttribute("href","https://norbertolarrosa.github.io/".concat(markerId));
 					myImg.setAttribute("src","../imagenes/info.png");
 					
 					console.log('Marcador Encontrado');
