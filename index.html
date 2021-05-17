@@ -68,7 +68,7 @@
 					}
 					
 					myAdd.setAttribute("href","https://localhost:".concat(markerId));
-					myImg.setAttribute("src","/info.png");
+					myImg.setAttribute("src","../info.png");
 					
 					console.log('Marcador Encontrado');
 					// TODO: Add your own code here to react to the marker being found.
@@ -79,7 +79,7 @@
 					console.log('Marcador perdido', markerId);
 
 					myAdd.setAttribute("href","#");
-					myImg.setAttribute("src","/logo2.png");
+					myImg.setAttribute("src","../logo2.png");
 
 					infoV.innerHTML = '----------';
 				});
@@ -130,29 +130,29 @@
 			<!--<a-entity gltf-model="/corazon/Heart_.gltf" scale="0.05 0.05 0.05" rotation="0 -90 90"></a-entity>-->
 			<!--<a-entity gltf-model="/Bee.glb" scale="0.1 0.1 0.1" animation-mixer="clip: DoStuff;"></a-entity>-->
 			<!--
-			<a-entity sound="src: /tambor.mp3" geometry="primitive: box" material="color: blue" cursor-listener
+			<a-entity sound="src: ../tambor.mp3" geometry="primitive: box" material="color: blue" cursor-listener
 				audiohandler2></a-entity>
 			-->
 			<!--
-			<a-entity gltf-model="/kultrum/kultrum.gltf" sound="src: /tambor.mp3"></a-entity>
+			<a-entity gltf-model="../kultrum/kultrum.gltf" sound="src: /tambor.mp3"></a-entity>
 
 		</a-marker>
 		-->
 		<a-marker preset='custom' type='pattern' id='3000' url='/kultrum.patt' registerevents>
 
-			<!--<a-entity gltf-model="/corazon/Heart_.gltf" scale="0.05 0.05 0.05" rotation="0 -90 90"></a-entity>-->
-			<!--<a-entity gltf-model="/Bee.glb" scale="0.1 0.1 0.1" animation-mixer="clip: DoStuff;"></a-entity>-->
+			<!--<a-entity gltf-model="../corazon/Heart_.gltf" scale="0.05 0.05 0.05" rotation="0 -90 90"></a-entity>-->
+			<!--<a-entity gltf-model="../Bee.glb" scale="0.1 0.1 0.1" animation-mixer="clip: DoStuff;"></a-entity>-->
 			<!--
-			<a-entity sound="src: /tambor.mp3" geometry="primitive: box" material="color: blue" cursor-listener
+			<a-entity sound="src: ../tambor.mp3" geometry="primitive: box" material="color: blue" cursor-listener
 				audiohandler2></a-entity>
 			-->
-			<a-entity gltf-model="/kultrum/kultrum.gltf" sound="src: /tambor.mp3"></a-entity>
+			<a-entity gltf-model="../kultrum/kultrum.gltf" sound="src: ../tambor.mp3"></a-entity>
 
 		</a-marker>
 
 		<a-marker preset='hiro' id='3100' registerevents>
 		
-			<a-entity gltf-model="/vasija/vasija.gltf">
+			<a-entity gltf-model="../vasija/vasija.gltf">
 
 			</a-entity>
 		
@@ -160,9 +160,9 @@
 
 		<!--
 
-		<a-marker preset='custom' type='pattern' url='/vasija.patt'>
+		<a-marker preset='custom' type='pattern' url='../vasija.patt'>
 		
-			<a-entity gltf-model="/lampara/Lantern.gltf" scale="0.05 0.05 0.05">
+			<a-entity gltf-model="../lampara/Lantern.gltf" scale="0.05 0.05 0.05">
 
 			</a-entity>
 		
@@ -175,7 +175,7 @@
 
 		<div id="info-button" style='position: fixed; bottom:0; right:0; text-align: center; z-index: 1; user-select: none;'>
 			<a href="#">
-				<input style="margin:30px" width="150px" type="image" src="/logo2.png">
+				<input style="margin:30px" width="150px" type="image" src="../logo2.png">
 				</input>
 			</a>
 		</div>
@@ -202,7 +202,7 @@
 
 		<div id="universidad-button" style='position: fixed; bottom:0; left:0; text-align: center; z-index: 1; user-select: none;'>
 			<a href="#">
-				<input style="margin:30px" width="150px" type="image" src="/LOGO UNCO.png">
+				<input style="margin:30px" width="150px" type="image" src="../LOGO UNCO.png">
 				</input>
 			</a>
 		</div>
