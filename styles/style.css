@@ -1,3 +1,7 @@
+html {
+    height: 100%;
+}
+
 body {
     background-image: url("/imagenes/museo.jpg");
     background-size: cover;
@@ -9,26 +13,17 @@ div {
 }
 
 div.Titulo {
-    text-align: center;
-    font-size: 90px;
-    font-weight: 500px;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    text-shadow: 8px 6px 3px black;
-    background: linear-gradient(102deg, #b92323 64.5%, #191992 64.5%);
-    width: 35%;
-    margin: auto;
-
-    color: #fff;
+    margin-left: 35%;
 }
 
 ul.menu {
     user-select: none;
     text-align: center;
-    font-size: 24px;
+    font-size: 150%;
     list-style: none;
     margin-bottom: 0px;
     margin-top: 5px;
-    margin-left: 80%;
+    margin-left: 70%;
     padding: 0;
 }
 
@@ -53,7 +48,7 @@ ul.menu li a {
 
 ul.menu li a:hover,
 ul.menu li a:active {
-    font-size: 24px;
+    font-size: 100%;
     font-family: 'Courier New', Courier, monospace;
     background: #f0a6a6 url("/imagenes/logo2.png") no-repeat 3px;
     background-size: 30px 30px;
