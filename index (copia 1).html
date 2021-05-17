@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>A-FRAME</title>
+    <meta name="description" content="Hello, World! - A-Frame">
+    <script src="https://aframe.io/releases/0.9.1/aframe.min.js"></script>
+	<!--<script src="/aframe.min.js"></script>-->
+	
+<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
+<!--<script src="/aframe-ar.js"></script>-->
+<script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
+<!--<script src="/aframe-gif-shader.min.js">-->
+  </head>
+  <body style='margin : 0px; overflow: hidden;'>
+	<!-- embedded arjs='sourceType: webcam; debugUIEnabled: false;' 
+	embedded artoolkit='sourceType: webcam;'
+	-->
+	<a-scene cursor="rayOrigin: mouse"; embedded arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+<a-assets>
+     <!--<audio id="ratablanca" src="/C:\Users\NJL\Music\laLlaveDeLaPuertaSecreta.mp3" preload="auto"></audio>-->
+     <!--
+	 <audio id="bizet" preload="auto" crossorigin="anonymous" src="https://upload.wikimedia.org/wikipedia/commons/a/a6/%22Die_Stem_van_Suid-Afrika%22_performed_by_the_SABC_Symphony_Orchestra.oga">
+        </audio>-->
+
+        <a-asset-item id="lion-obj" src="/leon/Lion.obj"></a-asset-item>
+        <a-asset-item id="lion-mtl" src="/leon/Lion.mtl"></a-asset-item>
+
+  </a-assets>
+		<!--
+		<a-marker id="homero" preset='hiro'>
+      
+         <a-entity id="musica" sound="src: #bizet; isPlaying: false" onclick="repPau()" geometry="primitive:plane;" rotation="-90 0 0" material="shader:gif;src:url(https://media.giphy.com/media/9caXYExVCgrDy/giphy.gif)"></a-entity>
+         <!--<a-entity scale="0.01 0.01 0.01" gltf-model="#cityModel"></a-entity>
+      
+		</a-marker>
+		-->
+		<a-marker preset='hiro'>
+
+			<a-entity obj-model="obj:#lion-obj; mtl:#lion-mtl" scale="0.2 0.2 0.2"></a-entity>
+			<!--
+			<a-entity rotation= "-90 0 0" scale="0.04 0.04 0.04" gltf-model="/Jug_505.gltf"></a-entity>
+			-->
+		</a-marker>
+		
+		<a-marker preset='kanji'>
+		
+			<a-entity gltf-model="/arrowhead.gltf"></a-entity>
+		
+		</a-marker>
+	</a-scene>
+	<!--
+	<script>
+		var entity = document.getElementById('musica');
+		var m = document.getElementById('homero');
+		function repPau()
+		{
+			if(entity.components.sound.isPlaying)
+			{
+				entity.components.sound.stopSound();
+				console.log('entre');
+			}
+			else
+			{
+				entity.components.sound.playSound();
+				console.log('reproduci');
+			}
+		}
+		
+		if(m.object3D.visible)
+		{
+			//entity.components.sound.playSound();
+			console.log('entre');
+		}
+		else
+		{
+			//entity.components.sound.stopSound();
+			console.log('reproduci');
+		}
+		
+	</script>
+	-->
+</body>
+
+</html>

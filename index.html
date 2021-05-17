@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Realidad Aumentada</title>
+	<meta name="description" content="Hello, World! - A-Frame">
+
+	<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+	<!--<script src="/aframe.min.js"></script>-->
+	<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+
+	<script>
+		window.addEventListener('camera-init', (data) => {
+			console.log('camera-init', data);
+		})
+	
+		window.addEventListener('camera-error', (error) => {
+			console.log('camera-error', error);
+		})
+	
+		AFRAME.registerComponent('registerevents', {
+			init: function () {
+				var marker = this.el;
+				var info = document.getElementById('info-button');
+				let infoV = document.getElementById('infoV');
+				console.log(infoV);
+				var myAdd;
+				var myImg;
+				var mySound;
+
+				console.log(marker);
+				console.log(marker.el);
+
+				marker.addEventListener('markerFound', function() {
+					
+					console.log(myAdd);
+					console.log(myImg);
+					console.log(mySound);
+
+					var markerId = marker.id;
+
+					myAdd = info.getElementsByTagName('a')[0]; //direccion de nueva pagina.
+					myImg = myAdd.getElementsByTagName('input')[0]; // imagen de info.
+					mySound = marker.object3D.children[0].el.components.sound;
+
+					console.log(marker.object3D);
+
+					if(markerId === "3000")
+					{
+						marker.addEventListener('click',  () =>{
+							if(marker.object3D.visible)
+							{
+								mySound.stopSound();
+								mySound.playSound();
+							}
+						})
+					}
+
+					console.log(markerId);
+
+					switch(markerId)
+					{
+						case '3000':
+							infoV.innerHTML = 'KULTRUN'; break;
+						case '3100':
+							infoV.innerHTML = 'VASIJA'; break;
+					}
+					
+					myAdd.setAttribute("href","https://localhost:".concat(markerId));
+					myImg.setAttribute("src","/info.png");
+					
+					console.log('Marcador Encontrado');
+					// TODO: Add your own code here to react to the marker being found.
+				});
+	
+				marker.addEventListener('markerLost', function() {
+					var markerId = marker.id;
+					console.log('Marcador perdido', markerId);
+
+					myAdd.setAttribute("href","#");
+					myImg.setAttribute("src","/logo2.png");
+
+					infoV.innerHTML = '----------';
+				});
+			}
+		});
+	</script>
+
+	<script>
+
+		AFRAME.registerComponent('cursor-listener', {
+			init: function () {
+				var lastIndex = -1;
+				var COLORS = ['red', 'green', 'blue', 'gray', 'pink', 'white', 'lime'];
+				this.el.addEventListener('click', function (evt) {
+					lastIndex = (lastIndex + 1) % COLORS.length;
+					this.setAttribute('material', 'color', COLORS[lastIndex]);
+					console.log('I was clicked at: ', evt.detail.intersection.point);
+				});
+			}
+		})
+
+		AFRAME.registerComponent('audiohandler2', {
+			init: function () {
+
+				let active = Array.prototype.slice.call(document.getElementsByClassName("sonidoTactil")).filter(x => x.object3D.visible);
+				this.el.addEventListener('click', () => {
+					active[0].object3D.children[0].el.components.sound.stopSound();
+					active[0].object3D.children[0].el.components.sound.playSound();
+				})
+			}
+		})
+	</script>
+
+
+</head>
+
+<body style='margin : 0px; overflow: hidden;'>
+	<!-- embedded arjs='sourceType: webcam; debugUIEnabled: false;' 
+	embedded artoolkit='sourceType: webcam; cursor="rayOrigin: mouse"
+	sourceWidth:1366; sourceHeight:768; displayWidth: 1366; displayHeight: 768;
+	-->
+	<a-scene
+		arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'
+		vr-mode-ui="enabled: false">
+		<!--
+		<a-marker preset='hiro' id='3000' registerevents>
+
+			<!--<a-entity gltf-model="/corazon/Heart_.gltf" scale="0.05 0.05 0.05" rotation="0 -90 90"></a-entity>-->
+			<!--<a-entity gltf-model="/Bee.glb" scale="0.1 0.1 0.1" animation-mixer="clip: DoStuff;"></a-entity>-->
+			<!--
+			<a-entity sound="src: /tambor.mp3" geometry="primitive: box" material="color: blue" cursor-listener
+				audiohandler2></a-entity>
+			-->
+			<!--
+			<a-entity gltf-model="/kultrum/kultrum.gltf" sound="src: /tambor.mp3"></a-entity>
+
+		</a-marker>
+		-->
+		<a-marker preset='custom' type='pattern' id='3000' url='/kultrum.patt' registerevents>
+
+			<!--<a-entity gltf-model="/corazon/Heart_.gltf" scale="0.05 0.05 0.05" rotation="0 -90 90"></a-entity>-->
+			<!--<a-entity gltf-model="/Bee.glb" scale="0.1 0.1 0.1" animation-mixer="clip: DoStuff;"></a-entity>-->
+			<!--
+			<a-entity sound="src: /tambor.mp3" geometry="primitive: box" material="color: blue" cursor-listener
+				audiohandler2></a-entity>
+			-->
+			<a-entity gltf-model="/kultrum/kultrum.gltf" sound="src: /tambor.mp3"></a-entity>
+
+		</a-marker>
+
+		<a-marker preset='hiro' id='3100' registerevents>
+		
+			<a-entity gltf-model="/vasija/vasija.gltf">
+
+			</a-entity>
+		
+		</a-marker>
+
+		<!--
+
+		<a-marker preset='custom' type='pattern' url='/vasija.patt'>
+		
+			<a-entity gltf-model="/lampara/Lantern.gltf" scale="0.05 0.05 0.05">
+
+			</a-entity>
+		
+		</a-marker>
+
+		-->
+
+		<a-entity camera> <a-cursor></a-cursor>
+		</a-entity>
+
+		<div id="info-button" style='position: fixed; bottom:0; right:0; text-align: center; z-index: 1; user-select: none;'>
+			<a href="#">
+				<input style="margin:30px" width="150px" type="image" src="/logo2.png">
+				</input>
+			</a>
+		</div>
+
+		<div style="background-color: rgb(211, 211, 211, 0.5);
+		position: fixed;
+		bottom:0;
+		left: 25%;
+		width: 40%;
+		height: 50px;
+		margin: 50px;
+		z-index: 1;
+		border-radius:70px;
+		border-bottom: 5px solid #1a1818;
+		border-top: 5px solid #1a1818;
+		border-left: 5px solid #1a1818;
+		border-right: 5px solid #1a1818;
+		text-align: center;
+		">
+			<div>
+				<p style="font-size: large;" id="infoV">----------</p>
+			</div>
+		</div>
+
+		<div id="universidad-button" style='position: fixed; bottom:0; left:0; text-align: center; z-index: 1; user-select: none;'>
+			<a href="#">
+				<input style="margin:30px" width="150px" type="image" src="/LOGO UNCO.png">
+				</input>
+			</a>
+		</div>
+
+	</a-scene>
+
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<html>
+
+<head>
+    <title>Vasija</title>
+    <style type="text/css">
+        body {
+            font-size: 26px;
+            background-color: #FFF;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        div {
+            padding: 30px;
+
+            display: flex;
+            justify-content: center;
+        }
+
+        ul {
+            list-style: square;
+            color: #006161;
+            text-align: justify;
+        }
+
+        li {
+            margin-bottom: 20px;
+        }
+
+        p.Titulo {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: #000;
+            font-size: 82px;
+            text-align: center;
+            text-decoration: underline;
+        }
+
+        p.Subtitulo {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: #000;
+            font-size: 54px;
+            text-align: center;
+            text-decoration: underline;
+        }
+
+        p.Texto {
+            color: black;
+            text-indent: 60px;
+            text-align: justify;
+        }
+
+        img {
+
+            height: 250px;
+            width: 250px;
+            margin: 5px;
+        }
+    </style>
+
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+
+<body>
+    <p class="Titulo">VASIJA</p>
+
+    <p class="Texto">VASIJA DE CERAMICA ORNITOMORFA: JARRA GLOBULAR CON CUELLO ASIMÉTRICO ENCONTRADA EN EL YACIMIENTO ARQUEOLOGICO CAÑADÓN SANTO DOMINGO (ZAPALA).</p>
+    <video style="margin: 0 auto; display: block; border: 8px solid #1b1717;" src="/VASIJA2.mp4" width="1280" height="720" loop controls></video>
+    <p class="Texto">Caracteristicas descriptivas: Jarra restringida monocroma de color marrón claro, cuerpo globular, con un cuello ubicado de forma asimétrica con asa, base convexa. En la parte inferior tiene la leyenda "281" en color negro, cubierto de acrílico transparente.</p>
+    <p class="Texto">La artesanía araucana o mapuche (mapu: tierra, che: hombre), se basa en la elaboración de infinidad de piezas de utilidad práctica y de expresión estética o espiritual. La alfarería, aunque sin decoración se distingue por sus formas zoomorfas que representan a los animales del corral con los que aún conviven. Sus diseños se trasmiten de generación en generación e incluye la forma en que ellos perciben el mundo.</p>
+
+    <p class="Subtitulo">RECREACIÓN 3D DE LA VASIJA</p>
+
+    <model-viewer style="width: 100%; height: 75%;  margin:auto;" src="/vasija/vasija.gltf" alt="Modelo 3D del Kultrum"
+        auto-rotate camera-controls></model-viewer>
+
+    <div>FUENTE: Personal Museo Gregorio Álvarez</div>
+
+</body>
+
+</html>

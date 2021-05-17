@@ -1,0 +1,60 @@
+body {
+    background-image: url("museo.jpg");
+    background-size: cover;
+    display: block;
+}
+
+div {
+    user-select: none;
+}
+
+div.Titulo {
+    text-align: center;
+    font-size: 90px;
+    font-weight: 500px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-shadow: 8px 6px 3px black;
+    background: linear-gradient(102deg, #b92323 64.5%, #191992 64.5%);
+    width: 35%;
+    margin: auto;
+
+    color: #fff;
+}
+
+ul.menu {
+    user-select: none;
+    text-align: center;
+    font-size: 24px;
+    list-style: none;
+    margin-bottom: 0px;
+    margin-top: 5px;
+    margin-left: 1080px;
+    padding: 0;
+}
+
+ul.menu li {
+    border-bottom: 1px solid #7C7C7C;
+    border-right: 1px solid #7C7C7C;
+    background: #F4F4F4;
+    border-radius: 50px;
+    border-bottom: 3px solid;
+    border-right: 3px solid;
+}
+
+ul.menu li a {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    padding: .2em 0 .2em 1.5em;
+    border-radius: 50px;
+    display: block;
+    text-decoration: none;
+    color: black;
+    background: #cfc9c9 /*url("/flecha_inactiva.png") no-repeat 20px*/;
+}
+
+ul.menu li a:hover,
+ul.menu li a:active {
+    font-size: 24px;
+    font-family: 'Courier New', Courier, monospace;
+    background: #f0a6a6 url("/logo2.png") no-repeat 3px;
+    background-size: 30px 30px;
+}
