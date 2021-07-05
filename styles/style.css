@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    background-image: url("/imagenes/museo.jpg");
+    background: url("museo.jpg");
     background-size: cover;
     display: block;
 }
@@ -14,6 +14,25 @@ div {
 
 div.Titulo {
     margin-left: 35%;
+}
+
+div.Titulo img{
+    width: 50%;
+}
+
+div.banner {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+}
+
+div.banner img  {
+    border-radius:70px;
+    border-bottom: 5px solid #1a1818;
+    border-top: 5px solid #1a1818;
+    border-left: 5px solid #1a1818;
+    border-right: 5px solid #1a1818;
+    width: 650px;
 }
 
 ul.menu {
@@ -50,6 +69,6 @@ ul.menu li a:hover,
 ul.menu li a:active {
     font-size: 100%;
     font-family: 'Courier New', Courier, monospace;
-    background: #f0a6a6 url("/imagenes/logo2.png") no-repeat 3px;
+    background: #f0a6a6 url("/logo2.png") no-repeat 3px;
     background-size: 30px 30px;
 }
