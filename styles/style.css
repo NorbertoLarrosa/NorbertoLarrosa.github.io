@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    background: url("museo.jpg");
+    background: url("/imagenes/museo.jpg");
     background-size: cover;
     display: block;
 }
@@ -69,6 +69,6 @@ ul.menu li a:hover,
 ul.menu li a:active {
     font-size: 100%;
     font-family: 'Courier New', Courier, monospace;
-    background: #f0a6a6 url("/logo2.png") no-repeat 3px;
+    background: #f0a6a6 url("/imagenes/logo2.png") no-repeat 3px;
     background-size: 30px 30px;
 }
