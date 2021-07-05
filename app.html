@@ -9,88 +9,10 @@
 	<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
 	<!--<script src="/aframe.min.js"></script>-->
 	<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-
-	<script>
-		window.addEventListener('camera-init', (data) => {
-			console.log('camera-init', data);
-		})
 	
-		window.addEventListener('camera-error', (error) => {
-			console.log('camera-error', error);
-		})
+	<script src="/funcionamiento.js"></script>
 	
-		AFRAME.registerComponent('registerevents', {
-			init: function () {
-				var marker = this.el;
-				var info = document.getElementById('info-button');
-				let infoV = document.getElementById('infoV');
-				console.log(infoV);
-				var myAdd;
-				var myImg;
-				var mySound;
-
-				console.log(marker);
-				console.log(marker.el);
-
-				marker.addEventListener('markerFound', function() {
-					
-					console.log(myAdd);
-					console.log(myImg);
-					console.log(mySound);
-
-					var markerId = marker.id;
-
-					myAdd = info.getElementsByTagName('a')[0]; //direccion de nueva pagina.
-					myImg = myAdd.getElementsByTagName('input')[0]; // imagen de info.
-					mySound = marker.object3D.children[0].el.components.sound;
-
-					console.log(marker.object3D);
-
-					if(markerId === "3000")
-					{
-						marker.addEventListener('click',  () =>{
-							if(marker.object3D.visible)
-							{
-								mySound.stopSound();
-								mySound.playSound();
-							}
-						})
-					}
-
-					console.log(markerId);
-
-					switch(markerId)
-					{
-						case '3000':
-							infoV.innerHTML = 'KULTRUN';
-							myAdd.setAttribute("href","https://norbertolarrosa.github.io/kultrum.html");
-							break;
-						case '3100':
-							infoV.innerHTML = 'VASIJA';
-							myAdd.setAttribute("href","https://norbertolarrosa.github.io/vasija.html");
-							break;
-					}
-					
-					//myAdd.setAttribute("href","https://norbertolarrosa.github.io/".concat(markerId));
-					myImg.setAttribute("src","../imagenes/info.png");
-					
-					console.log('Marcador Encontrado');
-					// TODO: Add your own code here to react to the marker being found.
-				});
-	
-				marker.addEventListener('markerLost', function() {
-					var markerId = marker.id;
-					console.log('Marcador perdido', markerId);
-
-					myAdd.setAttribute("href","#");
-					myImg.setAttribute("src","/imagenes/logo2.png");
-
-					infoV.innerHTML = '----------';
-				});
-			}
-		});
-	</script>
-
+	<!--NO USADO-->
 	<script>
 
 		AFRAME.registerComponent('cursor-listener', {
@@ -128,6 +50,19 @@
 	<a-scene
 		arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'
 		vr-mode-ui="enabled: false">
+		
+		<a-assets>
+			<audio id="sonidoKultrum" src="/imagenes/tambor.mp3"></audio>
+			<a-asset-item id="kultrum" src="/Objetos/kultrum/kultrum2.gltf"></a-asset-item>
+			<a-asset-item id="vasija" src="/Objetos/vasija/vasija2.gltf"></a-asset-item>
+			<a-asset-item id="hacha" src="/Objetos/hacha/hacha3_1.gltf"></a-asset-item>
+			<a-asset-item id="molino" src="/Objetos/molino/molino.gltf"></a-asset-item>
+			<a-asset-item id="pintura" src="/Objetos/pintura/pintura.gltf"></a-asset-item>
+			<a-asset-item id="pipa" src="/Objetos/pipa/pipa2_2.gltf"></a-asset-item>
+			<a-asset-item id="puntasFlecha" src="/Objetos/puntaFlecha/PuntasFlecha.gltf"></a-asset-item>
+			<a-asset-item id="tapahue" src="/Objetos/tapahue/tapahue.gltf"></a-asset-item>
+		</a-assets>
+		
 		<!--
 		<a-marker preset='hiro' id='3000' registerevents>
 
@@ -142,24 +77,110 @@
 
 		</a-marker>
 		-->
-		<a-marker preset='custom' type='pattern' id='3000' url='../marcadores/kultrum.patt' registerevents>
+		<a-marker preset='custom' type='pattern' id='3000' url='/marcadores/kultrum.patt' registerevents>
 
-			<!--<a-entity gltf-model="../corazon/Heart_.gltf" scale="0.05 0.05 0.05" rotation="0 -90 90"></a-entity>-->
-			<!--<a-entity gltf-model="../Bee.glb" scale="0.1 0.1 0.1" animation-mixer="clip: DoStuff;"></a-entity>-->
+			<a-entity gltf-model="#kultrum" sound="src: #sonidoKultrum"></a-entity>
+
+		</a-marker>
+		
+		<a-marker preset='custom' type='pattern' id='4000' url='/marcadores/kultrumColor.patt' registerevents>
+
+			<!--<a-entity gltf-model="/corazon/Heart_.gltf" scale="0.05 0.05 0.05" rotation="0 -90 90"></a-entity>-->
+			<!--<a-entity gltf-model="/Bee.glb" scale="0.1 0.1 0.1" animation-mixer="clip: DoStuff;"></a-entity>-->
 			<!--
-			<a-entity sound="src: ../tambor.mp3" geometry="primitive: box" material="color: blue" cursor-listener
+			<a-entity sound="src: /tambor.mp3" geometry="primitive: box" material="color: blue" cursor-listener
 				audiohandler2></a-entity>
 			-->
-			<a-entity gltf-model="../Objetos/kultrum/kultrum.gltf" sound="src: ../imagenes/tambor.mp3"></a-entity>
+			<a-entity gltf-model="#kultrum" sound="src: #sonidoKultrum"></a-entity>
 
 		</a-marker>
 
-		<a-marker preset='hiro' id='3100' registerevents>
+		<a-marker preset='custom' type='pattern' id='3100' url='/marcadores/vasija.patt' registerevents>
 		
-			<a-entity gltf-model="../Objetos/vasija/vasija.gltf">
+			<a-entity gltf-model="#vasija">
 
 			</a-entity>
 		
+		</a-marker>
+		
+		<a-marker preset='custom' type='pattern' id='4100' url='/marcadores/vasijaColor.patt' registerevents>
+		
+			<a-entity gltf-model="#vasija">
+
+			</a-entity>
+		
+		</a-marker>
+		
+		<a-marker preset='custom' type='pattern' id='3200' url='/marcadores/hacha.patt' registerevents>
+
+			<a-entity gltf-model="#hacha"></a-entity>
+
+		</a-marker>
+
+		<a-marker preset='custom' type='pattern' id='4200' url='/marcadores/hachaColor.patt' registerevents>
+
+			<a-entity gltf-model="#hacha"></a-entity>
+
+		</a-marker>
+
+		<a-marker preset='custom' type='pattern' id='3300' url='/marcadores/molino.patt' registerevents>
+
+			<a-entity scale="1.5 1.5 1.5" gltf-model="#molino"></a-entity>
+
+		</a-marker>
+
+		<a-marker preset='custom' type='pattern' id='4300' url='/marcadores/molinoColor.patt' registerevents>
+
+			<a-entity scale="1.5 1.5 1.5" gltf-model="#molino"></a-entity>
+
+		</a-marker>
+
+		<a-marker preset='custom' type='pattern' id='3400' url='/marcadores/pintura.patt' registerevents>
+
+			<a-entity scale="0.75 0.75 0.75" gltf-model="#pintura"></a-entity>
+
+		</a-marker>
+
+		<a-marker preset='custom' type='pattern' id='4400' url='/marcadores/pinturaColor.patt' registerevents>
+
+			<a-entity scale="0.75 0.75 0.75" gltf-model="#pintura"></a-entity>
+
+		</a-marker>
+
+		<a-marker preset='custom' type='pattern' id='3500' url='/marcadores/pipa.patt' registerevents>
+
+			<a-entity scale="4 4 4" gltf-model="#pipa"></a-entity>
+
+		</a-marker>
+
+		<a-marker preset='custom' type='pattern' id='4500' url='/marcadores/pipaColor.patt' registerevents>
+
+			<a-entity scale="4 4 4" gltf-model="#pipa"></a-entity>
+
+		</a-marker>
+
+		<a-marker preset='custom' type='pattern' id='3600' url='/marcadores/puntasFlecha.patt' registerevents>
+
+			<a-entity gltf-model="#puntasFlecha"></a-entity>
+
+		</a-marker>
+
+		<a-marker preset='custom' type='pattern' id='4600' url='/marcadores/puntasFlechaColor.patt' registerevents>
+
+			<a-entity gltf-model="#puntasFlecha"></a-entity>
+
+		</a-marker>
+
+		<a-marker preset='custom' type='pattern' id='3700' url='/marcadores/tapahue.patt' registerevents>
+
+			<a-entity scale="0.5 0.5 0.5" gltf-model="#tapahue"></a-entity>
+
+		</a-marker>
+
+		<a-marker preset='custom' type='pattern' id='4700' url='/marcadores/tapahueColor.patt' registerevents>
+
+			<a-entity scale="0.5 0.5 0.5" gltf-model="#tapahue"></a-entity>
+
 		</a-marker>
 
 		<!--
@@ -174,7 +195,7 @@
 
 		-->
 
-		<a-entity camera> <a-cursor></a-cursor>
+		<a-entity camera> <a-cursor material="opacity:  0;"></a-cursor>
 		</a-entity>
 
 		<div id="info-button" style='width:20%; position: fixed; bottom:0; right:0; z-index: 1; user-select: none;'>
@@ -184,21 +205,7 @@
 			</a>
 		</div>
 
-		<div style="background-color: rgb(211, 211, 211, 0.5); user-select: none;
-		position: fixed;
-		bottom:0;
-		width: 50%;
-		height: 50px;
-		margin-left: 23%;
-		margin-bottom: 5%;
-		z-index: 1;
-		border-radius:70px;
-		border-bottom: 5px solid #1a1818;
-		border-top: 5px solid #1a1818;
-		border-left: 5px solid #1a1818;
-		border-right: 5px solid #1a1818;
-		text-align: center;
-		">
+		<div class="barraObj" style="user-select: none;">
 			<div>
 				<p style="font-size: large;" id="infoV">----------</p>
 			</div>
