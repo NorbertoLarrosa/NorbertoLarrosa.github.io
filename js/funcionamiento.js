@@ -6,13 +6,6 @@ window.addEventListener('camera-error', (error) => {
     console.log('camera-error', error);
 })
 
-AFRAME.registerComponent('disable-inspector', {
-  dependencies: ['inspector'],
-  init: function () {
-    this.el.components.inspector.remove();
-  }
-});
-
 AFRAME.registerComponent('registerevents', {
     init: function () {
         var marker = this.el;
