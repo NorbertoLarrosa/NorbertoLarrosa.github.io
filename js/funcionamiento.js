@@ -9,8 +9,8 @@ window.addEventListener('camera-error', (error) => {
 AFRAME.registerComponent('registerevents', {
     init: function () {
         var marker = this.el;
-        var info = document.getElementById("info-button");
-        let infoV = document.getElementById("infoV");
+        var info = document.getElementById('info-button');
+        let infoV = document.getElementById('infoV');
         var myAdd;
         var myImg;
         var mySound;
