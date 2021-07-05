@@ -27,7 +27,7 @@ p.Texto{
 }
 
 img {
-    height: 250px;
-    width: 250px;
+    height: 50%;
+    width: 30%;
     border: 5px solid #1b1717;
 }
