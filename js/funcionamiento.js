@@ -64,7 +64,7 @@ AFRAME.registerComponent('registerevents', {
                 case '3500':
                 case '4500':
                     infoV.innerHTML = 'PIPA';
-                    myAdd.setAttribute("href","https://norbertolarrosa.github.io/.htmlpipa");
+                    myAdd.setAttribute("href","https://norbertolarrosa.github.io/pipa.html");
                     break;
                 case '3600':
                 case '4600':
