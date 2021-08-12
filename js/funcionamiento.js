@@ -79,7 +79,7 @@ AFRAME.registerComponent('registerevents', {
 
             }
             
-            myImg.setAttribute("src","/imagenes/info.png");
+            myImg.setAttribute("src","/imagenes/info2.png");
             
             console.log('Marcador Encontrado');
             // TODO: Add your own code here to react to the marker being found.
