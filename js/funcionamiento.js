@@ -79,7 +79,7 @@ AFRAME.registerComponent('registerevents', {
 
             }
             
-            myImg.setAttribute("src","/info2.png");
+            myImg.setAttribute("src","../imagenes/info2.png");
             
             console.log('Marcador Encontrado');
             // TODO: Add your own code here to react to the marker being found.
@@ -90,7 +90,7 @@ AFRAME.registerComponent('registerevents', {
             console.log('Marcador perdido', markerId);
 
             myAdd.setAttribute("href","#");
-            myImg.setAttribute("src","/logo MGA.png");
+            myImg.setAttribute("src","../imagenes/logo MGA.png");
 
             infoV.innerHTML = '----------';
         });
