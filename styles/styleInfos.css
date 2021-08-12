@@ -8,7 +8,7 @@ body {
 
     font-size: 24px;
     /*background-color: #FFF;*/
-    background-image: url("/tela.jpg");
+    background-image: url("../imagenes/tela.jpg");
     box-shadow: 5px 5px 50px 20px;
     /*
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;*/
@@ -129,7 +129,7 @@ model-viewer {
 }
 
 #volver {
-    background-image:url('backButton2.png');
+    background-image:url('../imagenes/backButton2.png');
     background-repeat:no-repeat;
     background-size: 100%;
     height:60px;
