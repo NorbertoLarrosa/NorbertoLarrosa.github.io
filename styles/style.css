@@ -15,7 +15,7 @@ html {
 
 body {
     margin: 0;
-    background: url("museo.jpg");
+    background: url("imagenes/museo.jpg");
     background-size: 100% 100%;
     background-attachment: fixed;
 }
@@ -54,7 +54,7 @@ ul.menu li a {
 ul.menu li a:hover,
 ul.menu li a:active {
     font-family: 'Courier New', Courier, monospace;
-    background: #f0a6a6 url("/logo MGA.png") no-repeat 3px;
+    background: #f0a6a6 url("imagenes/LOGO MGA.png") no-repeat 3px;
     background-size: auto 90%;
 }
 /*
