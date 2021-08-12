@@ -8,7 +8,7 @@ body {
     background-color: #FFF;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
-    background-image: url("/antiguo.jpg");
+    background-image: url("../imagenes/antiguo.jpg");
     background-size: 100% 100%;
     background-attachment: fixed;
 }
@@ -218,7 +218,7 @@ img {
 }
 
 #volver {
-    background-image:url('backButton2.png');
+    background-image:url('../imagenes/backButton2.png');
     background-repeat:no-repeat;
     background-size: 100%;
     height:60px;
