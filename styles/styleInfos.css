@@ -1,18 +1,36 @@
+@import url('https://fonts.cdnfonts.com/css/iniya');
+
 body {
-    font-size: 26px;
-    background-color: #FFF;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-left: 5%;
+    margin-right: 5%;
+
+    border: 1px solid #1b1717;
+
+    font-size: 24px;
+    /*background-color: #FFF;*/
+    background-image: url("/tela.jpg");
+    box-shadow: 5px 5px 50px 20px;
+    /*
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;*/
+    font-family: 'Iniya', sans-serif;
+    font-weight: bolder;
 }
 
 div.Epigrafe {
+    color: white;
+    text-shadow: 3px 3px #333;
     padding: 30px;
-
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: end;
 }
 
 ul {
+    font-size: 2.75vw;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-shadow: 4px 3px black;
     list-style: square;
-    color: #006161;
+    color:white;
     text-align: justify;
 }
 
@@ -20,44 +38,110 @@ li {
     margin-bottom: 20px;
 }
 
-p.Titulo {
+.Titulo {
+    margin-left: 5%;
+    margin-right: 5%;
+    text-shadow: 3px 3px #333;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: #000;
-    font-size: 82px;
+    color: white;
+    font-size: 14vw;
     text-align: center;
     text-decoration: underline;
 }
 
-p.Subtitulo {
+.Subtitulo {
+    margin-left: 5%;
+    margin-right: 5%;
+    text-shadow: 3px 3px #333;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: #000;
-    font-size: 54px;
+    color: white;
+    font-size: 4vw;
     text-align: center;
-    text-decoration: underline;
+    /*text-decoration: underline;*/
 }
 
-div.Texto {
-    color: black;
+.Recreacion {
+    display: none;
+}
+
+.Recreacion2::before {
+    content: "IMAGEN REAL";
+}
+
+.Texto {
+    margin-left: 3%;
+    margin-right: 3%;
+    color:white;
+    font-size: 5vw;
+    text-shadow: 4px 3px black;
     text-indent: 60px;
     text-align: justify;
 }
 
 img {
+    margin: 3px auto;
     display:block;
-    margin:auto;
     border: 10px solid #555;
-    float:left;
+    float:none;
 }
 
 video {
+    height: auto;
     margin: 0 auto;
     display: block;
     border: 8px solid #1b1717;
 }
 
 model-viewer {
+    background-color: white;
     width: 95%;
     height: 75%;
     margin:auto;
     border: 10px solid #555;
+    display:none;
+}
+
+.button {
+    position:fixed;
+    top:1%;
+    right:1%;
+    justify-content: center;
+
+    z-index: 1;
+
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 50%;
+
+}
+
+.botonMenu {
+    color: black; 
+    border: 8px solid black;
+  }
+  
+.botonMenu:hover {
+    background-color: #b92323;
+}
+
+#volver {
+    background-image:url('backButton2.png');
+    background-repeat:no-repeat;
+    background-size: 100%;
+    height:60px;
+    width:60px;
+    border: 0px;
+    background-position:center;
+}
+
+@media only screen and (min-width: 730px) {
+    .Texto {font-size: 3vw;}
+    .Recreacion {display: block;}
+    .Recreacion2::after {content:" Y RECREACIÓN 3D"}
+    model-viewer{display:block;}
+    img {margin-left: 5%;margin-right: 5%;float:left}
 }

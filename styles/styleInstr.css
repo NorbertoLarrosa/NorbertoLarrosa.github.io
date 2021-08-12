@@ -1,33 +1,241 @@
+* {
+    box-sizing: border-box;
+}
 body {
-    font-size: 26px;
+    margin-left: 5%;
+    margin-right: 5%;
+    font-size: 100%;
     background-color: #FFF;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    background-image: url("/antiguo.jpg");
+    background-size: 100% 100%;
+    background-attachment: fixed;
 }
 
-div {
-    padding: 30px;
-    display: inline;
-}
-
-p {
-    text-indent: 60px;
-}
-
-p.Titulo {
+.Titulo {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: black;
-    font-size: 96px;
+    color: white;
+    text-shadow: 3px 3px #333;
+    font-size: 6vw;
     text-align: center;
     text-decoration: underline;
 }
 
-p.Texto{
-    color: black;
+.Subtitulo {
+    text-shadow: 3px 3px #333;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    font-size: 4vw;
+    text-align: center;
+    /*text-decoration: underline;*/
+}
+
+.Texto{
+    text-indent: 5%;
+    color: white;
+    text-shadow: 3px 3px #333;
     text-align: justify;
+    font-size: 26px;
+}
+
+#elementosApp li {
+    list-style: square;
+
+    color: white;
+    text-shadow: 3px 3px #333;
+    text-align: justify;
+    font-size: 26px;
+}
+
+#barraObj {
+    background-color: rgb(211, 211, 211, 0.5);
+    display: block;
+    width: 50%;
+
+    margin: 0 auto;
+
+    border-radius:70px;
+    border-bottom: 5px solid #1a1818;
+    border-top: 5px solid #1a1818;
+    border-left: 5px solid #1a1818;
+    border-right: 5px solid #1a1818;
+
+    text-align: center;
+
+    user-select: none;
+}
+
+.opcion{
+    text-align: center;
+    display: block;
+    float:left;
+    width: 50%;
+    border-bottom: 1px solid #7C7C7C;
+    border-right: 1px solid #7C7C7C;
+    background: #F4F4F4;
+    border-radius: 50px;
+    border-bottom: 3px solid;
+    border-right: 3px solid;
+}
+
+#botLogo {
+    border: 0px solid #1b1717;
+    width: 30%;
+}
+
+#botInfo {
+    border: 0px solid #1b1717;
+    width: 30%;
+    margin-left: 15%;
+}
+
+.enlacesMarcadores {
+    text-align: center;
+}
+
+.enlacesMarcadores a{
+    margin: auto;
+    display: block;
+    width: fit-content;
+    font-size: 4vw;
+    color: white;
+}
+
+video {
+    margin: 0 auto;
+    display: block;
+    width: 70%;
+    height: auto;
+    border: 4px solid #1b1717;
+    border-radius: 12%;
+    box-shadow: 0px 0px 20px 10px #000000;
+}
+
+span {
+    width: 50%;
+    float: left;
 }
 
 img {
-    height: 50%;
-    width: 30%;
-    border: 5px solid #1b1717;
+    width: 100%;
+}
+
+#menu {
+    border: 3px solid black;
+    box-shadow: 3px 3px 2px 12px rgba(39, 39, 39, 0.5);
+    display: none;
+}
+
+#menuCelular {
+    border: 3px solid black;
+    box-shadow: 3px 3px 2px 12px rgba(39, 39, 39, 0.5);
+}
+
+#permCam {
+    border: 3px solid black;
+    box-shadow: 3px 3px 2px 12px rgba(39, 39, 39, 0.5);
+    display: none;
+}
+
+#permCamCelu {
+    border: 3px solid black;
+    box-shadow: 3px 3px 2px 12px rgba(39, 39, 39, 0.5);
+}
+
+.contenedorB {
+    text-align: center;
+}
+
+.contenedorM {
+    width: 100%;
+    display: inline-block;
+    border: 8px solid #17171b;
+    margin-top: 1%;
+}
+
+.contenedorM img {
+    width: 49.3%;
+}
+
+#botonSubida {
+    display: inline-block;
+    position:fixed;
+    bottom: 3%;
+    right: 1%;
+    color:white;
+    background-color: white;
+    border: 0px solid #17171b;
+    border-radius: 100%;
+    box-shadow: 3px 3px 5px 3px rgba(39, 39, 39, 0.5);
+
+    text-decoration: none;
+
+    visibility: hidden;
+    opacity: 0;
+    transition:visibility 0.3s linear, opacity 0.3s linear;
+
+    cursor: pointer;
+}
+
+#botonSubida:hover {
+    background-color: #b92323;
+}
+
+.tamanio img{
+    width: 100%;
+}
+
+.tamanio {
+    width: 10%;
+}
+
+.button {
+    position:fixed;
+    top:1%;
+    right:1%;
+    justify-content: center;
+
+    z-index: 1;
+
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 50%;
+
+}
+
+.botonMenu {
+    color: black; 
+    border: 8px solid black;
+  }
+  
+.botonMenu:hover {
+    background-color: #b92323;
+}
+
+#volver {
+    background-image:url('backButton2.png');
+    background-repeat:no-repeat;
+    background-size: 100%;
+    height:60px;
+    width:60px;
+    border: 0px;
+    background-position:center;
+}
+
+@media only screen and (min-width: 730px) {
+    /* For desktop: */
+    .tamanio {width: 8%;}
+    .contenedorM{width: 49%;}
+    .opcion {width: 30%;}
+    .enlacesMarcadores a{ display: inline-block; font-size: 2vw;}
+    #botLogo, #botInfo {width: 20%;}
+    #menuCelular { display: none;}
+    #menu { display: block;}
+    #permCamCelu { display: none;}
+    #permCam { display: block;}
 }
