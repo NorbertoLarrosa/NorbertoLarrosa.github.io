@@ -4,61 +4,114 @@
         <title>Instrucciones</title>
         <link rel="stylesheet" type="text/css" href="/styles/styleInstr.css"/>
         <link rel="shortcut icon" type="image/jpg" href="/imagenes/info.jpg"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="js/subirInicio.js"></script>
     </head>
 
     <body>
+        <button class="button botonMenu" onClick="location='https://norbertolarrosa.github.io/'">
+            <p id="volver"></p>
+        </button>
         <p class="Titulo">INSTRUCCIONES DE USO</div>
-        
-        <p class="Texto">La aplicación funciona mediante el uso de la cámara del dispositivo. La misma enfocará el entorno a nuestro alrededor con normalidad y mostrará algo nuevo al usuario al detectar un marcador.</p>
 
-        <p class="Texto">Dichos marcadores consisten de imágenes (en blanco y negro) de sombras representativas de algún objeto enmarcados en un cuadrado negro. También existen marcadores a color enmarcados en un cuadrado negro. Al detectarse, se mostrarán en pantalla objetos de acuerdo al marcador enfocado.</p>
+        <p class="Texto">MuseoRA es una aplicación de realidad aumentada la cual muestra al usuario una serie de objetos virtuales tridimensionales al enfocar marcadores específicos. Para ello, la aplicación debe ejecutarse en un dispositivo que cuente con una cámara como un celular, una tablet o una computadora (en el caso de una computadora, puede usarse una cámara web o una cámara integrada).</p>
+        <p class="Texto">La primera pantalla que usted visualizará al abrir la aplicación será el menú principal:</p>
+    
+        <img id="menu" src="imagenes/menu.png" alt="" />
+        <img id="menuCelular" src="imagenes/menuCelular.png" alt="" />
+    
+        <p class="Texto">Allí podrá elegir entre las opciones:</p>
+    
+        <li class="opcion">INICIAR</li>
+        <p class="Texto">Es la opción que ejecuta el programa. Tras pulsar en esta opción, se cargarán todos los elementos necesarios (marcadores, objetos e información de dichos objetos) y mostrará una nueva ventana en la cual se verá lo que la cámara del dispositivo esté enfocando en ese momento.</p>
+        <li class="opcion">INSTRUCCIONES</li>
+        <p class="Texto">La segunda opción de este menú. Le mostrará la ventana que usted está visualizando en este momento.</p>
+        <li class="opcion">ACERCA DE</li>
+        <p class="Texto">Apartado donde se habla del proyecto para la realización de MuseoRA y los participantes del mismo.</p>
+    
+        <p class="Texto">Al pulsar en el botón INICIAR, se visualizará una pantalla de carga en donde los marcadores y objetos 3D se preparan para ser utilizados. Luego de unos instantes, se pedirá, al usuario, permiso para poder hacer uso de la cámara del dispositivo (debe aceptarse esta opción).</p>
 
-        <p class="Texto">A continuación se listarán los distintos marcadores con sus respectivos objetos a mostrar:</p>
+        <p class="Texto">Una vez se permita el uso de la cámara, la aplicación comenzará a funcionar mostrando aquello que capture la cámara. Por encima de dicha captura, se pueden visualizar distintos elementos relevantes: </p>
 
-        <div>
+        <img id="appFunc" src="imagenes/appFuncionando2.png" alt="" />
+    
+        <ul id="elementosApp">
+            <li>En la esquina superior izquierda, encontrará un botón con la etiqueta "MENU" el cual hará que se regrese al menú principal de la aplicación.</li>
+            <button class="botonMenu" style="border-radius: 50%; margin: 0 auto; display: block">
+                <p id="volver"></p>
+            </button>
+            <li>En la parte inferior de la pantalla, se encuentra la "barra de información" la cual se encarga de mostrar el nombre del objeto que se visualice al momento de observar algún marcador.</li>
+                <div id="barraObj">
+                    <div>
+                        <p style="font-size: large;" id="infoV">----------</p>
+                    </div>
+                </div>
+            <li>Y en la esquina inferior derecha, se visualiza el "botón de Información". El mismo muestra el logo del Museo Gregorio Álvarez y, tras enfocar un marcador, este cambiará por una imagen con la letra "i" (de información).</li>
+        </ul> 
+    
+        <div class="contenedorB">
+            <img id="botLogo" src="imagenes/logo MGA.png" alt="" />
+            <img id="botInfo" src="imagenes/info2.png" alt="" />
+        </div>
+    
+        <p class="Texto">Como se mencionó al inicio de este instructivo, esta aplicación muestra un objeto cuando la cámara enfoca a un marcador. A continuación se mostrarán los marcadores que la aplicación reconoce:</p>
+    
+        <img id="permCam" src="imagenes/permisoCamara2.png" alt="" />
+        <img id="permCamCelu" src="imagenes/permisoCamaraCelu.png" alt="" />
+    
+        <div class="contenedorM">
             <img src="/imagenes/marcadorHacha.png" alt="" />
             <img src="/imagenes/marcadorHachaColor.png" alt="" />
-            <img src="/imagenes/hacha.png" alt="" />
         </div>
-        <div>
+        <div class="contenedorM">
             <img src="/imagenes/marcadorKultrum.png" alt="" />
             <img src="/imagenes/marcadorKultrumColor.png" alt="" />
-            <img src="/imagenes/kultrum.png" alt="" />
         </div>
-        <div>
+        <div class="contenedorM">
             <img src="/imagenes/marcadorMolino.png" alt="" />
             <img src="/imagenes/marcadorMolinoColor.png" alt="" />
-            <img src="/imagenes/molino.png" alt="" />
         </div>
-        <div>
+        <div class="contenedorM">
             <img src="/imagenes/marcadorPintura.png" alt="" />
             <img src="/imagenes/marcadorPinturaColor.png" alt="" />
-            <img src="/imagenes/pintura.png" alt="" />
         </div>
-        <div>
+        <div class="contenedorM">
             <img src="/imagenes/marcadorPipa.png" alt="" />
             <img src="/imagenes/marcadorPipaColor.png" alt="" />
-            <img src="/imagenes/pipa.png" alt="" />
         </div>
-        <div>
+        <div class="contenedorM">
             <img src="/imagenes/marcadorVasija.png" alt="" />
             <img src="/imagenes/marcadorVasijaColor.png" alt="" />
-            <img src="/imagenes/vasijaMuestra.png" alt="" />
         </div>
-        <div>
+        <div class="contenedorM">
             <img src="/imagenes/marcadorPuntasFlechas.png" alt="" />
             <img src="/imagenes/marcadorPuntasFlechasColor.png" alt="" />
-            <img src="/imagenes/puntasFlecha.png" alt="" />
         </div>
-        <div>
+        <div class="contenedorM">
             <img src="/imagenes/marcadorTapahue.png" alt="" />
             <img src="/imagenes/marcadorTapahueColor.png" alt="" />
-            <img src="/imagenes/tapahue.png" alt="" />
+        </div>
+    
+        <p class="Texto">Y en los enlaces siguientes encontrará archivos PDF donde descargar dichos marcadores e imprimirlos para que pueda utilizarlos:</p>
+   
+        <div class="enlacesmarcadores">
+            <a href="imagenes/marcadoresByN2.pdf" download="marcadores en blanco y negro.pdf"><i class="fa fa-file-pdf-o" style="font-size:48px;color:red;background-color: white;"></i>MARCADORES EN BLANCO Y NEGRO</a></li>
+            <a href="imagenes/marcadoresColor2.pdf" download="marcadores a color.pdf"><i class="fa fa-file-pdf-o" style="font-size:48px;color:red;background-color: white;"></i>MARCADORES A COLOR</a></li>
         </div>
 
-        <p class="Texto">Sin dejar de enfocar el marcador, es posible observar desde distintos ángulos el objeto mostrado. Además, es posible ver más información del objeto visualizado pulsando en el botón de información en la esquina inferior derecha en la aplicación.</p>
-        <div>
-            <img style="height:30%; width: 20%;border: 0px solid #1b1717;" src="/imagenes/info.png" alt="" />
+        <p class="Subtitulo">APLICACIÓN EN FUNCIONAMIENTO</p>
+
+        <p class="Texto">Para empezar a usar la aplicación se debe ingresar al menú principal, pulsar en el botón iniciar y dar permiso de usar la cámara del dispositivo (como se explicó anteriormente). Una vez allí, solo es necesario enfocar alguno de los marcadores presentados anteriormente para visualizar los diversos objetos.</p>
+        <p class="Texto">A continuación se muestra un video ilustrativo sobre la cámara del dispositivo (en este caso una cámara web) enfocando un marcador en tercera persona (vista de fuera de la aplicación) y en primera persona (vista desde la aplicación).</p>
+    
+        <video src="videos/MuseoRA explicacion 2.mp4" muted loop autoplay></video>
+
+        <p class="Texto">Sin dejar de enfocar el marcador, es posible observar, desde distintos ángulos, el objeto mostrado ya sea que se manipule el marcador o se manipule la cámara. Además, es posible ver más información del objeto visualizado pulsando en el botón de información en la esquina inferior derecha en la aplicación.</p>
+
+        <video src="videos/muestraInfo2.mp4" muted loop autoplay></video>
+
+        <div id="botonSubida" class="tamanio">
+            <img src="imagenes/arrowUp.png" href="javascript:void(0)" onClick="subir(document.body.scrollHeight)"></img>
         </div>
     </body>
 
