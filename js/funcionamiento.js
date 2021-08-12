@@ -90,7 +90,7 @@ AFRAME.registerComponent('registerevents', {
             console.log('Marcador perdido', markerId);
 
             myAdd.setAttribute("href","#");
-            myImg.setAttribute("src","/imagenes/logo2.png");
+            myImg.setAttribute("src","/imagenes/LOGO MGA.png");
 
             infoV.innerHTML = '----------';
         });
