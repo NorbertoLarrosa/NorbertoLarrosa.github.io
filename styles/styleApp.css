@@ -72,7 +72,7 @@
 }
 
 #volver {
-    background-image:url('backButton2.png');
+    background-image:url('../imagenes/backButton2.png');
     background-repeat:no-repeat;
     background-size: 50px 50px;
     height:60px;
