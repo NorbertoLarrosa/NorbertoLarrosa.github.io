@@ -1,5 +1,5 @@
 html {
-    background-image: url("/papel.jpg");
+    background-image: url("imagenes/papel.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     filter: brightness(123%);
