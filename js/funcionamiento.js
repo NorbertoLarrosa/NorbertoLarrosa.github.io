@@ -39,42 +39,42 @@ AFRAME.registerComponent('registerevents', {
                 case '3000':
                 case '4000':
                     infoV.innerHTML = 'KULTRUN';
-                    myAdd.setAttribute("href","https://localhost:5000/app/kultrum");
+                    myAdd.setAttribute("href","https://norbertolarrosa.github.io/kultrum");
                     break;
                 case '3100':
                 case '4100':
                     infoV.innerHTML = 'VASIJA';
-                    myAdd.setAttribute("href","https://localhost:5000/app/vasija");
+                    myAdd.setAttribute("href","https://norbertolarrosa.github.io/vasija");
                     break;
                 case '3200':
                 case '4200':
                     infoV.innerHTML = 'HACHA';
-                    myAdd.setAttribute("href","https://localhost:5000/app/hacha");
+                    myAdd.setAttribute("href","https://norbertolarrosa.github.io/hacha");
                     break;
                 case '3300':
                 case '4300':
                     infoV.innerHTML = 'MOLINO';
-                    myAdd.setAttribute("href","https://localhost:5000/app/molino");
+                    myAdd.setAttribute("href","https://norbertolarrosa.github.io/molino");
                     break;
                 case '3400':
                 case '4400':
                     infoV.innerHTML = 'PINTURA';
-                    myAdd.setAttribute("href","https://localhost:5000/app/pintura");
+                    myAdd.setAttribute("href","https://norbertolarrosa.github.io/pintura");
                     break;
                 case '3500':
                 case '4500':
                     infoV.innerHTML = 'PIPA';
-                    myAdd.setAttribute("href","https://localhost:5000/app/pipa");
+                    myAdd.setAttribute("href","https://norbertolarrosa.github.io/pipa");
                     break;
                 case '3600':
                 case '4600':
                     infoV.innerHTML = 'PUNTAS DE FLECHA';
-                    myAdd.setAttribute("href","https://localhost:5000/app/puntas");
+                    myAdd.setAttribute("href","https://norbertolarrosa.github.io/puntasFlecha2");
                     break;
                 case '3700':
                 case '4700':
                     infoV.innerHTML = 'TAPAHUE';
-                    myAdd.setAttribute("href","https://localhost:5000/app/tapahue");
+                    myAdd.setAttribute("href","https://norbertolarrosa.github.io/tapahue");
                     break;
 
             }
